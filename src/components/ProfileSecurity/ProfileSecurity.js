@@ -1,8 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Languages } from '../../Languages/Languages';
-import { ProfileButton } from '../ProfileChange/ProfileChange.styled';
 import {
 	ProfileSecurityButton,
 	ProfileSecurityDesc,

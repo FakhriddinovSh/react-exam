@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container } from '../../pages/Home/Home.styled';
-// import { AuthorItem } from '../AuthorItem/AuthorItem';
 import CarouselBanner from '../Carousel/Carousel';
 import { SIngleAuthorItem } from '../SingleAuthorItem/SIngleAuthorItem';
 import {
@@ -21,7 +20,6 @@ import {
 	SearchWrapper,
 } from '../AuthorSearch/AuthorSearch.styled';
 import { Languages } from '../../Languages/Languages';
-import { AuthorItem } from '../AuthorItem/AuthorItem';
 
 export const AllBooks = ({ theme, lang }) => {
 	const params = useParams();

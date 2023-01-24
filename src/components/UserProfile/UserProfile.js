@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import {
 	ProfileButton,
@@ -6,7 +5,6 @@ import {
 	ProfileWrapper,
 } from './UserProfile.styled';
 import HomeIcon from '../../assets/images/icons/HomeIcon.svg';
-import HomeIconDark from '../../assets/images/icons/HomeIcon-dark.svg';
 import { Languages } from '../../Languages/Languages';
 import { useDispatch } from 'react-redux';
 import { deleteToken } from '../../redux/token/tokenAction';

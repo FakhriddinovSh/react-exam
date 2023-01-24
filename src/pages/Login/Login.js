@@ -61,25 +61,6 @@ export const Login = ({ theme, lang }) => {
 		},
 	});
 
-	// const handleFormSubmit = (evt) => {
-	// 	evt.preventDefault();
-
-	// 	axios
-	// 		.post('http://localhost:5000/user/login', {
-	// 			email: user_email.current.value,
-	// 			password: user_password.current.value,
-	// 		})
-	// 		.then((res) => {
-	// 			if (res.status === 201) {
-	// 				JSON.stringify(
-	// 					localStorage.setItem('token', res.data.token),
-	// 				);
-	// 				navigate('/');
-	// 			}
-	// 		})
-	// 		.catch((err) => console.log(err));
-	// };
-
 	return (
 		<RegisterWrapper>
 			<RegisterLeftWrapper></RegisterLeftWrapper>

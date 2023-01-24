@@ -7,7 +7,6 @@ import {
 	ItemImage,
 	ItemInnerWrapper,
 } from './AuthorItem.styled';
-import AbdullaQodiriy from '../../assets/images/abdulla-qodiriy.jpg';
 
 export const AuthorItem = ({
 	theme,

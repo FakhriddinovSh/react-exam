@@ -20,7 +20,6 @@ import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import { SingleAuthor } from '../SingleAuthor/SingleAuthor';
 import { AllAuthors } from '../../components/AllAuthors/AllAuthors';
-import CarouselBanner from '../../components/Carousel/Carousel';
 import { Books } from '../Books/Books';
 import { SingleBook } from '../SingleBook/SingleBook';
 
@@ -89,12 +88,6 @@ export const Home = ({ theme, lang }) => {
 			</Header>
 
 			<Routes>
-				{/* <Route index element={<CarouselBanner />} />
-				<Route element={<AllAuthors />} />
-				<Route
-					path="author"
-					element={<SingleAuthor theme={theme} lang={lang} />}
-				/> */}
 				<Route
 					path={'/'}
 					element={<AllAuthors theme={theme} lang={lang} />}

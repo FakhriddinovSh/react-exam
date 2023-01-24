@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Languages } from '../../Languages/Languages';
 import {
 	BookBtn,
@@ -29,7 +30,7 @@ export const AddBook = ({ theme, lang }) => {
 	const book_genre = useRef('');
 	const book_author = useRef('');
 	const book_comment = useRef('');
-
+	const state = useSelector((state) => state);
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/genre`)
@@ -75,7 +76,7 @@ export const AddBook = ({ theme, lang }) => {
 		axios
 			.post('http://localhost:5000/book', formData, {
 				headers: {
-					Authorization: Token,
+					Authorization: state.token.token,
 				},
 			})
 			.then((res) => console.log(res))

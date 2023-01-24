@@ -1,11 +1,8 @@
-// import { styled, Switch } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
 import { Languages } from '../../Languages/Languages';
 import { addLanguage } from '../../redux/Language/LanguageActions';
 import { addTheme } from '../../redux/Mode/modeActions';
-import { ProfileSecurityButton } from '../ProfileSecurity/ProfileSecurity.styled';
 import {
 	CheckBox,
 	CheckBoxLabel,

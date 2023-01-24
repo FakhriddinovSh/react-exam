@@ -79,27 +79,6 @@ export const Register = ({ theme, lang }) => {
 		},
 	});
 
-	// const handleSubmitForm = (evt) => {
-	// 	evt.preventDefault();
-	// 	axios
-	// 		.post('http://localhost:5000/user/register', {
-	// 			first_name: firstName.current.value,
-	// 			last_name: lastName.current.value,
-	// 			phone: phoneNum.current.value,
-	// 			email: user_email.current.value,
-	// 			password: user_password.current.value,
-	// 		})
-	// 		.then((res) => {
-	// 			if (res.status === 201) {
-	// 				JSON.stringify(
-	// 					window.localStorage.setItem('token', res.data.token),
-	// 				);
-	// 				navigate('/');
-	// 			}
-	// 		})
-	// 		.catch((err) => console.log(err));
-	// };
-
 	return (
 		<RegisterWrapper>
 			<RegisterLeftWrapper></RegisterLeftWrapper>
@@ -208,63 +187,4 @@ export const Register = ({ theme, lang }) => {
 			</RegisterRightWrapper>
 		</RegisterWrapper>
 	);
-
-	// return (
-	// 	<RegisterWrapper>
-	// 		<RegisterLeftWrapper></RegisterLeftWrapper>
-	// 		<RegisterRightWrapper theme={theme}>
-	// 			<RegisterTitle theme={theme}>
-	// 				{Languages[lang].register.registerTitle}
-	// 			</RegisterTitle>
-	// 			<RegisterDescription theme={theme}>
-	// 				{Languages[lang].register.registerLink}
-	// 				<RegisterDescriptionLink to={'/login'}>
-	// 					{Languages[lang].register.registerTitle}
-	// 				</RegisterDescriptionLink>
-	// 			</RegisterDescription>
-	// 			<RegisterForm onSubmit={handleSubmitForm}>
-	// 				<RegisterInput
-	// 					ref={firstName}
-	// 					type="text"
-	// 					placeholder={Languages[lang].register.firstName}
-	// 					theme={theme}
-	// 					top
-	// 					required
-	// 				/>
-	// 				<RegisterInput
-	// 					ref={lastName}
-	// 					type="text"
-	// 					placeholder={Languages[lang].register.lastName}
-	// 					theme={theme}
-	// 					required
-	// 				/>
-	// 				<RegisterInput
-	// 					ref={phoneNum}
-	// 					type="number"
-	// 					placeholder={Languages[lang].register.phone}
-	// 					theme={theme}
-	// 					required
-	// 				/>
-	// 				<RegisterInput
-	// 					ref={user_email}
-	// 					type="email"
-	// 					placeholder={Languages[lang].register.email}
-	// 					theme={theme}
-	// 					required
-	// 				/>
-	// 				<RegisterInput
-	// 					ref={user_password}
-	// 					type="password"
-	// 					placeholder={Languages[lang].register.password}
-	// 					theme={theme}
-	// 					bottom
-	// 					required
-	// 				/>
-	// 				<RegisterButton theme={theme} type="submit">
-	// 					Next step
-	// 				</RegisterButton>
-	// 			</RegisterForm>
-	// 		</RegisterRightWrapper>
-	// 	</RegisterWrapper>
-	// );
 };

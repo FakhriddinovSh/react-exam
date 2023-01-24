@@ -5,7 +5,6 @@ import {
 	SingleAuthorListName,
 	SingleAuthorListTitle,
 } from '../../pages/SingleAuthor/SingleAuthor.styled';
-import ExampleBook from '../../assets/images/example-book.jpg';
 import { SingleAuthorItemLink } from './SingleAuthorItem.styled';
 import axios from 'axios';
 import { useSelector } from 'react-redux';

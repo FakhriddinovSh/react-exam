@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Languages } from '../../Languages/Languages';
 import {
 	ProfilBottom,
@@ -15,11 +16,11 @@ import {
 } from './ProfileChange.styled';
 
 export const ProfileChange = ({ theme, lang }) => {
-	const Token = localStorage.getItem('token');
 	const [image, setImage] = useState(null);
 	const userFirstName = useRef();
 	const userLastName = useRef();
 	const userPhone = useRef();
+	const state = useSelector((state) => state);
 
 	const imageValue = (props) => {
 		setImage(props.target.files[0]);
@@ -38,7 +39,7 @@ export const ProfileChange = ({ theme, lang }) => {
 		axios
 			.put('http://localhost:5000/user/account', formData, {
 				headers: {
-					Authorization: Token,
+					Authorization: state.token.token,
 				},
 			})
 			.then((res) => console.log(res))

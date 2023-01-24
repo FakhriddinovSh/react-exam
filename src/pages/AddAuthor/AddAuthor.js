@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Languages } from '../../Languages/Languages';
 import {
 	AuthorOption,
@@ -29,8 +30,7 @@ export const AddAuthor = ({ theme, lang }) => {
 	const authorBio = useRef();
 
 	const [genres, setGenres] = useState([]);
-	const Token = localStorage.getItem('token');
-
+	const state = useSelector((state) => state);
 	const imageValue = (props) => {
 		setImage(props.target.files[0]);
 	};
@@ -59,7 +59,7 @@ export const AddAuthor = ({ theme, lang }) => {
 		axios
 			.post('http://localhost:5000/author', formData, {
 				headers: {
-					Authorization: Token,
+					Authorization: state.token.token,
 				},
 			})
 			.then((res) => console.log(res))
