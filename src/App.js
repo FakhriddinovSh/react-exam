@@ -21,40 +21,17 @@ export const App = () => {
 			<Routes>
 				<Route
 					path="/*"
-					element={
-						state.token.token ? (
-							<Home theme={theme} lang={til} />
-						) : (
-							<Login theme={theme} lang={til} />
-						)
-					}
+					element={state.token.token ? <Home /> : <Login />}
 				/>
-				<Route
-					path="/login"
-					element={<Login theme={theme} lang={til} />}
-				/>
-				<Route
-					path="/register"
-					element={<Register theme={theme} lang={til} />}
-				/>
-				<Route
-					path="/addBook"
-					element={<AddBook theme={theme} lang={til} />}
-				/>
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/addBook" element={<AddBook />} />
 
-				<Route
-					path="/addAuthor"
-					element={<AddAuthor theme={theme} lang={til} />}
-				/>
+				<Route path="/addAuthor" element={<AddAuthor />} />
 				<Route
 					path="/profile/*"
 					element={
-						<Profile
-							theme={theme}
-							setTheme={setTheme}
-							setLang={setLanguage}
-							lang={til}
-						/>
+						<Profile setTheme={setTheme} setLang={setLanguage} />
 					}
 				/>
 			</Routes>

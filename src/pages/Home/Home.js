@@ -22,18 +22,21 @@ import { SingleAuthor } from '../SingleAuthor/SingleAuthor';
 import { AllAuthors } from '../../components/AllAuthors/AllAuthors';
 import { Books } from '../Books/Books';
 import { SingleBook } from '../SingleBook/SingleBook';
+import { useSelector } from 'react-redux';
 
-export const Home = ({ theme, lang }) => {
+export const Home = () => {
 	const [profile, setProfile] = useState(false);
 
 	const [me, setMe] = useState([]);
-	const Token = localStorage.getItem('token');
+	const state = useSelector((state) => state);
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	useEffect(() => {
 		axios
 			.get('http://localhost:5000/user/me', {
 				headers: {
-					Authorization: Token,
+					Authorization: state.token.token,
 				},
 			})
 			.then((res) => setMe(res.data))
