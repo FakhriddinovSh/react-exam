@@ -6,11 +6,15 @@ import {
 } from './UserProfile.styled';
 import HomeIcon from '../../assets/images/icons/HomeIcon.svg';
 import { Languages } from '../../Languages/Languages';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteToken } from '../../redux/token/tokenAction';
 
-export const UserProfile = ({ profile, lang }) => {
+export const UserProfile = ({ profile }) => {
 	const dispatch = useDispatch();
+
+	const state = useSelector((state) => state);
+
+	const lang = state.language.language;
 
 	return (
 		<ProfileWrapper profile={profile}>

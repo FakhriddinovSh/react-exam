@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {
 	AuthorDeadDate,
 	AuthorName,
@@ -9,7 +10,6 @@ import {
 } from './AuthorItem.styled';
 
 export const AuthorItem = ({
-	theme,
 	image,
 	name,
 	birth_date,
@@ -17,6 +17,9 @@ export const AuthorItem = ({
 	last_name,
 	id,
 }) => {
+	const state = useSelector((state) => state);
+
+	const theme = state.mode.theme;
 	return (
 		<Item theme={theme}>
 			<InnerLink to={`/singleAuthor/${id}`}>

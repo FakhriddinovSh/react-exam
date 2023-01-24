@@ -17,11 +17,10 @@ import {
 	BookWrapperTitle,
 } from './AddBook.styled';
 
-export const AddBook = ({ theme, lang }) => {
+export const AddBook = () => {
 	const [genre, setGenre] = useState([]);
 	const [author, setAuthor] = useState([]);
 	const [image, setImage] = useState(null);
-	const Token = localStorage.getItem('token');
 
 	const book_title = useRef('');
 	const book_pages = useRef('');
@@ -31,6 +30,9 @@ export const AddBook = ({ theme, lang }) => {
 	const book_author = useRef('');
 	const book_comment = useRef('');
 	const state = useSelector((state) => state);
+
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/genre`)

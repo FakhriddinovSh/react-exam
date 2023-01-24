@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Languages } from '../../Languages/Languages';
 import { addLanguage } from '../../redux/Language/LanguageActions';
 import { addTheme } from '../../redux/Mode/modeActions';
@@ -17,10 +17,15 @@ import {
 	ProfileSettingsWrapper,
 } from './ProfileSettings.styled';
 
-export const ProfileSettings = ({ theme, lang, setTheme, setLang }) => {
+export const ProfileSettings = ({ setTheme, setLang }) => {
 	const language_value = useRef();
 	const [checked, setChecked] = useState('light');
 	const dispatch = useDispatch();
+
+	const state = useSelector((state) => state);
+
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	const handleFormSubmit = (evt) => {
 		evt.preventDefault();

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { SIngleAuthorItem } from '../../components/SingleAuthorItem/SIngleAuthorItem';
+import { Languages } from '../../Languages/Languages';
 import { Container } from '../Home/Home.styled';
 import {
 	SingleAuthorCarousel,
@@ -24,12 +25,14 @@ import {
 	SingleBookWrapper,
 } from './SingleBook.styled';
 
-export const SingleBook = ({ theme }) => {
+export const SingleBook = () => {
 	const params = useParams();
 	const state = useSelector((state) => state);
 	const [singleBook, setSingleBook] = useState([]);
 	const [allBooks, setAllBooks] = useState([]);
 
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/book/bookId/${params.id}`, {
@@ -40,8 +43,6 @@ export const SingleBook = ({ theme }) => {
 			.then((res) => setSingleBook(res.data))
 			.catch((err) => console.log(err));
 	}, [params.id]);
-
-	console.log(singleBook);
 
 	useEffect(() => {
 		axios
@@ -72,7 +73,7 @@ export const SingleBook = ({ theme }) => {
 					<SingleBookList>
 						<SingleBookListItem>
 							<SingleBookPages theme={theme}>
-								Sahifalar soni:
+								{Languages[lang].singleBook.pagesCount}
 							</SingleBookPages>
 							<SingleBookPagesCount theme={theme}>
 								{singleBook.page} page
@@ -80,7 +81,7 @@ export const SingleBook = ({ theme }) => {
 						</SingleBookListItem>
 						<SingleBookListItem>
 							<SingleBookPages theme={theme}>
-								Chop etilgan:
+								{Languages[lang].singleBook.bookDate}
 							</SingleBookPages>
 							<SingleBookPagesCount theme={theme}>
 								{singleBook.year} years
@@ -88,7 +89,7 @@ export const SingleBook = ({ theme }) => {
 						</SingleBookListItem>
 						<SingleBookListItem>
 							<SingleBookPages theme={theme}>
-								Kitob narxi:
+								{Languages[lang].singleBook.price}
 							</SingleBookPages>
 							<SingleBookPagesCount theme={theme}>
 								${singleBook.price}
@@ -107,10 +108,10 @@ export const SingleBook = ({ theme }) => {
 			<SingleAuthorWrapperDiv>
 				<SingleAuthorCarousel>
 					<SingleAuthorCarouselTextOne>
-						Asarlari
+						{Languages[lang].singleAuthor.poems}
 					</SingleAuthorCarouselTextOne>
-					<SingleAuthorCarouselTextTwo to={'/books/1'}>
-						Hammasi
+					<SingleAuthorCarouselTextTwo theme={theme} to={'/books/1'}>
+						{Languages[lang].singleAuthor.allBook}
 					</SingleAuthorCarouselTextTwo>
 				</SingleAuthorCarousel>
 

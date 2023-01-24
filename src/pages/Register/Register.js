@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Languages } from '../../Languages/Languages';
 import { addToken } from '../../redux/token/tokenAction';
@@ -18,7 +18,7 @@ import {
 	RegisterWrapper,
 } from './Register.styled';
 
-export const Register = ({ theme, lang }) => {
+export const Register = () => {
 	const firstName = useRef('');
 	const lastName = useRef('');
 	const phoneNum = useRef('');
@@ -26,6 +26,10 @@ export const Register = ({ theme, lang }) => {
 	const user_password = useRef('');
 	const navigate = useNavigate('');
 	const dispatch = useDispatch();
+
+	const state = useSelector((state) => state);
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	const formik = useFormik({
 		initialValues: {
@@ -89,7 +93,7 @@ export const Register = ({ theme, lang }) => {
 				<RegisterDescription theme={theme}>
 					{Languages[lang].register.registerLink}
 					<RegisterDescriptionLink to={'/login'}>
-						{Languages[lang].register.registerTitle}
+						{Languages[lang].login.registerTitle}
 					</RegisterDescriptionLink>
 				</RegisterDescription>
 				<RegisterForm
@@ -181,7 +185,7 @@ export const Register = ({ theme, lang }) => {
 						</RegisterErrorSpan>
 					) : null}
 					<RegisterButton theme={theme} type="submit">
-						Next step
+						{Languages[lang].register.button}
 					</RegisterButton>
 				</RegisterForm>
 			</RegisterRightWrapper>

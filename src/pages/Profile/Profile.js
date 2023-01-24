@@ -11,11 +11,16 @@ import { ProfileChange } from '../../components/ProfileChange/ProfileChange';
 import { Route, Routes } from 'react-router-dom';
 import { ProfileSecurity } from '../../components/ProfileSecurity/ProfileSecurity';
 import { ProfileSettings } from '../../components/ProfileSettings/ProfileSettings';
+import { useSelector } from 'react-redux';
 
-export const Profile = ({ theme, lang, setTheme, setLang }) => {
+export const Profile = ({ setTheme, setLang }) => {
 	const [linkOne, setLinkOne] = useState(true);
 	const [linkTwo, setLinkTwo] = useState(false);
 	const [linkThree, setLinkThree] = useState(false);
+
+	const state = useSelector((state) => state);
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	return (
 		<ProfileTop>

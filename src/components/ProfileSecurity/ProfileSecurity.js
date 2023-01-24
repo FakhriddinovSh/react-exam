@@ -13,11 +13,14 @@ import {
 	ProfileTitle,
 } from './ProfileSecurity.styled';
 
-export const ProfileSecurity = ({ lang, theme }) => {
+export const ProfileSecurity = () => {
 	const user_email = useRef();
 	const current_password = useRef();
 	const new_password = useRef();
 	const state = useSelector((state) => state);
+
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	const handleSubmitForm = (evt) => {
 		evt.preventDefault();

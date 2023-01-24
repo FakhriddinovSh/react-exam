@@ -8,6 +8,7 @@ export const Languages = {
 			phone: 'Phone',
 			email: 'Email',
 			password: 'Password',
+			button: 'Next step',
 		},
 		login: {
 			registerTitle: 'Sign in',
@@ -74,6 +75,11 @@ export const Languages = {
 			search: 'Search',
 			placeholder: 'Literature, books, audios, articles...',
 			categories: 'Main categories',
+		},
+		singleBook: {
+			pagesCount: 'Number of pages',
+			bookDate: 'Printed:',
+			price: 'Cost:',
 		},
 	},
 	ru: {
@@ -154,6 +160,11 @@ export const Languages = {
 			placeholder: 'Литература, книги, аудио, статьи...',
 			categories: 'Основные категории',
 		},
+		singleBook: {
+			pagesCount: 'Количество страниц:',
+			bookDate: 'Напечатано:',
+			price: 'стоимость:',
+		},
 	},
 	uz: {
 		register: {
@@ -232,6 +243,11 @@ export const Languages = {
 			search: 'Qidirish',
 			placeholder: 'Adiblar, kitoblar, audiolar, maqolalar...',
 			categories: 'Asosiy kategoriyalar',
+		},
+		singleBook: {
+			pagesCount: 'Sahifalar soni:',
+			bookDate: 'Chop etilgan:',
+			price: 'Narxi:',
 		},
 	},
 };

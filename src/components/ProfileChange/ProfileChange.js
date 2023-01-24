@@ -15,7 +15,7 @@ import {
 	ProfilTitle,
 } from './ProfileChange.styled';
 
-export const ProfileChange = ({ theme, lang }) => {
+export const ProfileChange = () => {
 	const [image, setImage] = useState(null);
 	const userFirstName = useRef();
 	const userLastName = useRef();
@@ -25,6 +25,9 @@ export const ProfileChange = ({ theme, lang }) => {
 	const imageValue = (props) => {
 		setImage(props.target.files[0]);
 	};
+
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	const handleFormSubmit = (evt) => {
 		evt.preventDefault();

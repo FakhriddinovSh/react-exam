@@ -24,13 +24,15 @@ import {
 	SingleAuthorYear,
 } from './SingleAuthor.styled';
 
-export const SingleAuthor = ({ theme, lang }) => {
+export const SingleAuthor = () => {
 	const params = useParams();
 	const state = useSelector((state) => state);
 	const [authorInfo, setAuthorInfo] = useState([]);
 	const [authorBooks, setAuthorBooks] = useState([]);
 
-	console.log(state.token.token);
+	const theme = state.mode.theme;
+	const lang = state.language.language;
+
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/author/authorId/${params.id}`, {
@@ -112,7 +114,7 @@ export const SingleAuthor = ({ theme, lang }) => {
 					<SingleAuthorCarouselTextOne>
 						{Languages[lang].singleAuthor.poems}
 					</SingleAuthorCarouselTextOne>
-					<SingleAuthorCarouselTextTwo theme={theme} to={'/1'}>
+					<SingleAuthorCarouselTextTwo theme={theme} to={'/books/1'}>
 						{Languages[lang].singleAuthor.allBook}
 					</SingleAuthorCarouselTextTwo>
 				</SingleAuthorCarousel>

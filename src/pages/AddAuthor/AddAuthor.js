@@ -18,7 +18,7 @@ import {
 	BookWrapperTitle,
 } from './AddAuthor.styled';
 
-export const AddAuthor = ({ theme, lang }) => {
+export const AddAuthor = () => {
 	const [image, setImage] = useState(null);
 
 	const authorName = useRef();
@@ -34,6 +34,9 @@ export const AddAuthor = ({ theme, lang }) => {
 	const imageValue = (props) => {
 		setImage(props.target.files[0]);
 	};
+
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	useEffect(() => {
 		axios

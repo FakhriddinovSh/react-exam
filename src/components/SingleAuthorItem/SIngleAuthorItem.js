@@ -9,10 +9,11 @@ import { SingleAuthorItemLink } from './SingleAuthorItem.styled';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
-export const SIngleAuthorItem = ({ image, title, theme, author_id, path }) => {
+export const SIngleAuthorItem = ({ image, title, author_id, path }) => {
 	const state = useSelector((state) => state);
 	const [authorName, setAuthorName] = useState('');
 
+	const theme = state.mode.theme;
 	useEffect(() => {
 		axios
 			.get(`http://localhost:5000/author/authorId/${author_id}`, {

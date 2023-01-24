@@ -20,14 +20,20 @@ import {
 	SearchWrapper,
 } from '../AuthorSearch/AuthorSearch.styled';
 import { Languages } from '../../Languages/Languages';
+import { useSelector } from 'react-redux';
 
-export const AllBooks = ({ theme, lang }) => {
+export const AllBooks = () => {
 	const params = useParams();
 	const [books, setBooks] = useState({
 		isLoading: true,
 		data: [],
 		isError: false,
 	});
+
+	const state = useSelector((state) => state);
+
+	const theme = state.mode.theme;
+	const lang = state.language.language;
 
 	useEffect(() => {
 		axios
