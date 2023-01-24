@@ -72,4 +72,7 @@ body {
 	justify-content: space-between;
 }
 
+.header-active{
+	color: #000;
+}
 `;

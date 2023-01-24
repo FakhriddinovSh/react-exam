@@ -27,7 +27,8 @@ export const SearchInput = styled.input`
 	padding: 12px;
 	padding-left: 27px;
 	line-height: 24px;
-	color: rgba(13, 13, 13, 0.3);
+	color: ${(props) =>
+		props.theme === 'dark' ? '#fff' : 'rgba(13, 13, 13, 0.3)'};
 	background: ${(props) => (props.theme === 'dark' ? '#404040' : '#f5f5f5')};
 	border-radius: 15px;
 	border: none;

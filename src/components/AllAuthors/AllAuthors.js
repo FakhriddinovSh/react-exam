@@ -44,6 +44,11 @@ export const AllAuthors = ({ theme, lang }) => {
 			)
 			.then((res) => setSearchedAuthor(res.data))
 			.catch((err) => console.log(err));
+		searchAuthor.current.value = '';
+	};
+
+	const clearSearched = () => {
+		setSearchedAuthor([]);
 	};
 
 	return (
@@ -59,6 +64,7 @@ export const AllAuthors = ({ theme, lang }) => {
 								last_name={item?.last_name}
 								birth_date={item?.date_of_birth}
 								death_date={item?.date_of_death}
+								theme={theme}
 							/>
 					  ))
 					: ''}
@@ -88,22 +94,38 @@ export const AllAuthors = ({ theme, lang }) => {
 				</AllAuthorsDesc>
 				<AllAuthorsGenre>
 					<AllAuthorsGenreItem>
-						<AllAuthorsGenreLink theme={theme} to={`/1`}>
+						<AllAuthorsGenreLink
+							onClick={clearSearched}
+							theme={theme}
+							to={`/1`}
+						>
 							Temuriylar
 						</AllAuthorsGenreLink>
 					</AllAuthorsGenreItem>
 					<AllAuthorsGenreItem>
-						<AllAuthorsGenreLink theme={theme} to={`/2`}>
+						<AllAuthorsGenreLink
+							onClick={clearSearched}
+							theme={theme}
+							to={`/2`}
+						>
 							Jadid adabiyoti
 						</AllAuthorsGenreLink>
 					</AllAuthorsGenreItem>
 					<AllAuthorsGenreItem>
-						<AllAuthorsGenreLink theme={theme} to={`/3`}>
+						<AllAuthorsGenreLink
+							onClick={clearSearched}
+							theme={theme}
+							to={`/3`}
+						>
 							Sovet davri
 						</AllAuthorsGenreLink>
 					</AllAuthorsGenreItem>
 					<AllAuthorsGenreItem>
-						<AllAuthorsGenreLink theme={theme} to={`/4`}>
+						<AllAuthorsGenreLink
+							onClick={clearSearched}
+							theme={theme}
+							to={`/4`}
+						>
 							Mustaqillik davri
 						</AllAuthorsGenreLink>
 					</AllAuthorsGenreItem>

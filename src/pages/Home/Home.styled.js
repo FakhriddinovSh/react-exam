@@ -45,7 +45,7 @@ export const ListItem = styled.li`
 
 export const ListItemLink = styled(NavLink)`
 	line-height: 144.4%;
-	color: ${(props) => (props.theme === 'dark' ? '#fff' : '#0d0d0d')};
+	/* color: ${(props) => (props.theme === 'dark' ? '#fff' : '#0d0d0d')}; */
 	text-decoration: none;
 	opacity: 0.5;
 `;
